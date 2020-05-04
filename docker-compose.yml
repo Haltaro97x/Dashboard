@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+    python:
+        build: ./python
+        ports:
+          - "80:80"
+
+    
+    db:
+      image: postgres:latest
+      restart: always
+      hostname: db
+      environment:
+        POSTGRES_PASSWORD: password
+      volumes:
+        - db-data:/var/lib/postgresql/data postgres
+        networks: 
+           - 
+           - 
